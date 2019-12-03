@@ -1,0 +1,30 @@
+
+
+# values available to expressions in aggregate_zone_processor
+CONSTANTS:
+  #auto ownership variables
+  #need to update ANNUAL_COST_PER_VEHICLE based on dollar of year
+  ANNUAL_COST_PER_VEHICLE: 6274
+  #update from MACOG script (PopSyn) try class 1, 2, 3, 4+
+  AVERAGE_AUTOS_IN_4PLUS: 4.338
+  #utilities per minute (IVT coefficients from Metro model)
+  UPD_HBO: 0.21
+  UPD_HBS: 0.3
+  UPD_HBW: 0.13
+  UPD_NHBNW: 0.21
+  UPD_NHBW: 0.13
+  #value-of-time ($/hour; currently all equal, USDOT)
+  VOT_HBC: 12.34
+  VOT_HBO: 12.34
+  VOT_HBR: 12.34
+  VOT_HBS: 12.34
+  VOT_HBW: 12.34
+  VOT_NHBNW: 12.34
+  VOT_NHBW: 12.34
+  VOT_SCH: 12.34
+  #average bike and walk tour time from survey
+  AVG_NONMOTORIZED_TIME: 13.9
+  RISKREDUCTION: 0.108
+  MAXREDUCTION: 0.333
+  ANNMORTALITYRATE: 0.00815
+  VSL: 9600000

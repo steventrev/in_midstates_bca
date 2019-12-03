@@ -1,0 +1,140 @@
+
+link_daily_file_names:
+  "": AssignVolume.csv
+
+link_daily_index_fields:
+  - i
+  - j
+
+link_daily_table_column_map:
+  i: i
+  j: j
+  AUTO: AUTO
+  SUT: SUT
+  MUT: MUT
+  SPEED: SPEED
+  LENGTH: LENGTH
+  num_lanes: num_lanes
+  FCLASS: FCLASS
+  zone: zone
+  County: County
+  waterf: waterf
+  noisef: noisef
+
+CONSTANTS:
+  LINK_PEAK_TOD_SHARE_AUTO: 3.0
+  LINK_OFFPEAK_TOD_SHARE_AUTO: 8.7
+  LINK_PEAK_TOD_SHARE_TRANSIT: 3.2
+  LINK_OFFPEAK_TOD_SHARE_TRANSIT: 6.1
+  #SPF coefficients
+  SPF_RS_A: -11.63
+  SPF_RS_B: 1.33
+  SPF_RS_Y: 1.00
+  SPF_INT_A: -10.99
+  SPF_INT_B: 1.07
+  SPF_INT_Y: 0.23
+  #CMF settings
+  CMF_RS: 1.0
+  CMF_INT: 1.0
+  CALIBRATION_C1: 3.39
+  CALIBRATION_C2: 5.14
+  CALIBRATION_C3: 4.67
+  CALIBRATION_C4: 3.28
+  CALIBRATION_C5: 4.06
+  CALIBRATION_C6: 3.99
+  CALIBRATION_C7: 5.76
+  CALIBRATION_C8: 4.37
+  CALIBRATION_C9: 4.93
+  CALIBRATION_C10: 5.47
+  CALIBRATION_C11: 3.51
+  CALIBRATION_C12: 7.01
+  # Distribution of crashes in DAVIESS county
+  CRASH_PDO_DAV: 0.658
+  CRASH_INJURY_DAV: 0.319
+  CRASH_FATAL_DAV: 0.023
+  # Distribution of crashes in DUBOIS county
+  CRASH_PDO_DUB: 0.789
+  CRASH_INJURY_DUB: 0.206
+  CRASH_FATAL_DUB: 0.005
+  # Distribution of crashes in PERRY county
+  CRASH_PDO_PER: 0.812
+  CRASH_INJURY_PER: 0.185
+  CRASH_FATAL_PER: 0.003
+  # Distribution of crashes in PIKE county
+  CRASH_PDO_PIK: 0.682
+  CRASH_INJURY_PIK: 0.309
+  CRASH_FATAL_PIK: 0.009
+  # Distribution of crashes in SPENCER county
+  CRASH_PDO_SPE: 0.760
+  CRASH_INJURY_SPE: 0.227
+  CRASH_FATAL_SPE: 0.013
+  # Distribution of crashes in WARRICK county
+  CRASH_PDO_WAR: 0.781
+  CRASH_INJURY_WAR: 0.214
+  CRASH_FATAL_WAR: 0.005
+  # Distribution of crashes in GREENE county
+  CRASH_PDO_GRN: 0.791
+  CRASH_INJURY_GRN: 0.192
+  CRASH_FATAL_GRN: 0.017
+  # Distribution of crashes in CRAWFORD county
+  CRASH_PDO_CRF: 0.847
+  CRASH_INJURY_CRF: 0.146
+  CRASH_FATAL_CRF: 0.007
+  # Distribution of crashes in MONROE county
+  CRASH_PDO_MNR: 0.778
+  CRASH_INJURY_MNR: 0.220
+  CRASH_FATAL_MNR: 0.002
+  # Distribution of crashes in LAWRENCE county
+  CRASH_PDO_LAW: 0.769
+  CRASH_INJURY_LAW: 0.220
+  CRASH_FATAL_LAW: 0.011
+  # Distribution of crashes in MARTIN county
+  CRASH_PDO_MRT: 0.690
+  CRASH_INJURY_MRT: 0.289
+  CRASH_FATAL_MRT: 0.021
+  # Distribution of crashes in ORANGE county
+  CRASH_PDO_ORG: 0.783
+  CRASH_INJURY_ORG: 0.210
+  CRASH_FATAL_ORG: 0.007
+  # Crash costs in Dollars
+  CRASH_COST_PDO: 1522
+  CRASH_COST_INJURY: 441800
+  CRASH_COST_FATAL: 9400000
+  # Water pollution cost
+  WATER_POLLUTION_COST: 0.01625
+  # Noise pollution cost
+  NOISE_COST_AUTO_FREEWAY: 6.37
+  NOISE_COST_AUTO_ARTERIAL: 1.545
+  NOISE_COST_AUTO_COLLECTOR: 0.12
+  NOISE_COST_MEDTRUCKS_FREEWAY: 19.17
+  NOISE_COST_MEDTRUCKS_ARTERIAL: 10.945
+  NOISE_COST_MEDTRUCKS_COLLECTOR: 1.86
+  NOISE_COST_HEVTRUCKS_FREEWAY: 41.955
+  NOISE_COST_HEVTRUCKS_ARTERIAL: 44.17
+  NOISE_COST_HEVTRUCKS_COLLECTOR: 8.71
+  #Vehicle operating cost
+  GAS_COST: 2.80
+  TRUCK_GAS_COST: 3.08
+  GALLON_TO_BTU: 120524
+  CAR_COST_PER_MILE: 0.0628
+  TRUCK_COST_PER_MILE: 0.5070
+  #emissions
+  GRAMS_TO_METRIC_TONS: 0.000001
+  CO2_COST: 51.81
+  PM25_COST: 459000
+  PM10_COST: 139000
+  NOX_COST: 7300
+  VOCS_COST: 37900
+  CO2_PTYPE: 98
+  PM25_PTYPE: 110
+  PM10_PTYPE: 100
+  NOX_PTYPE: 3
+  VOCS_PTYPE: 87
+  FUEL_CONSUMPTION_PTYPE: 92
+
+TABLES:
+  EMISSIONS: moves_2010_summer_running_rates.csv
+
+# specify column name to enable zone tracing for both the o and the d zone
+# (if not specified, just trace first link)
+od_column: zone

@@ -1,0 +1,52 @@
+Processor,Target,Description,everybody
+link_daily,total_fat_crashes,total annual fatal crashes,-114.74941802503001
+link_daily,total_inj_crashes,total annual injury crashes,-3327.619385166931
+link_daily,total_pdo_crashes,total annual  PDO crashes,-11493.236476638174
+link_daily,crashes_fat_org,total fatal crash in ORANGE county,-4.520118199366329
+link_daily,crashes_inj_org,total injury crash in ORANGE county,-135.60354598098985
+link_daily,crashes_pdo_org,total PDO crash in ORANGE county,-505.60750715769063
+link_daily,crashes_fat_mrt,total fatal crash in MARTIN county,-5.011160284919188
+link_daily,crashes_inj_mrt,total injury crash in MARTIN county,-68.9631105876974
+link_daily,crashes_pdo_mrt,total PDO crash in MARTIN county,-164.65240936163053
+link_daily,crashes_fat_law,total fatal crash in LAWRENCE county,-16.219670373097546
+link_daily,crashes_inj_law,total injury crash in LAWRENCE county,-324.3934074619511
+link_daily,crashes_pdo_law,total PDO crash in LAWRENCE county,-1133.9024106283634
+link_daily,crashes_fat_mnr,total fatal crash in MONROE county,-10.857406757133445
+link_daily,crashes_inj_mnr,total injury crash in MONROE county,-1194.3147432846836
+link_daily,crashes_pdo_mnr,total PDO crash in MONROE county,-4223.531228524923
+link_daily,crashes_fat_crf,total fatal crash in CRAWFORD county,-2.7676410463717414
+link_daily,crashes_inj_crf,total injury crash in CRAWFORD county,-57.725084681467756
+link_daily,crashes_pdo_crf,total PDO crash in CRAWFORD county,-334.88456661098
+link_daily,crashes_fat_grn,total fatal crash in GREENE county,-24.30879515590007
+link_daily,crashes_inj_grn,total injury crash in GREENE county,-274.54639234898906
+link_daily,crashes_pdo_grn,total PDO crash in GREENE county,-1131.0739393127624
+link_daily,crashes_fat_war,total fatal crash in WARRICK county,-7.590611136954871
+link_daily,crashes_inj_war,total injury crash in WARRICK county,-324.8781566616684
+link_daily,crashes_pdo_war,total PDO crash in WARRICK county,-1185.6534595923504
+link_daily,crashes_fat_spe,total fatal crash in SPENCER county,-9.132694126320501
+link_daily,crashes_inj_spe,total injury crash in SPENCER county,-159.47088974421192
+link_daily,crashes_pdo_spe,total PDO crash in SPENCER county,-533.9113489233533
+link_daily,crashes_fat_pik,total fatal crash in PIKE county,-3.925450690146763
+link_daily,crashes_inj_pik,total injury crash in PIKE county,-134.7738070283723
+link_daily,crashes_pdo_pik,total PDO crash in PIKE county,-297.46193007556565
+link_daily,crashes_fat_per,total fatal crash in PERRY county,-1.2411981051748315
+link_daily,crashes_inj_per,total injury crash in PERRY county,-76.5405498191146
+link_daily,crashes_pdo_per,total PDO crash in PERRY county,-335.95095380065453
+link_daily,crashes_fat_dub,total fatal crash in DUBOIS county,-6.284923048556223
+link_daily,crashes_inj_dub,total injury crash in DUBOIS county,-258.9388296005162
+link_daily,crashes_pdo_dub,total PDO crash in DUBOIS county,-991.7608570621708
+link_daily,crashes_fat_dav,total fatal crash in DAVIESS county,-22.8897491010887
+link_daily,crashes_inj_dav,total injury crash in DAVIESS county,-317.47086796727274
+link_daily,crashes_pdo_dav,total PDO crash in DAVIESS county,-654.8458655876673
+link_daily,tot_crash_org,total crash in ORANGE county,-645.7311713380468
+link_daily,tot_crash_mrt,total crash in MARTIN county,-238.62668023424715
+link_daily,tot_crash_law,total crash in LAWRENCE county,-1474.515488463414
+link_daily,tot_crash_mnr,total crash in MONROE county,-5428.703378566726
+link_daily,tot_crash_crf,total crash in CRAWFORD county,-395.37729233881976
+link_daily,tot_crash_grn,total crash in GREENE county,-1429.9291268176507
+link_daily,tot_crash_war,total crash in WARRICK county,-1518.1222273909732
+link_daily,tot_crash_spe,total crash in SPENCER county,-702.5149327938846
+link_daily,tot_crash_pik,total crash in PIKE county,-436.161187794085
+link_daily,tot_crash_per,total crash in PERRY county,-413.73270172494387
+link_daily,tot_crash_dub,total crash in DUBOIS county,-1256.984609711244
+link_daily,tot_crash_dav,total crash in DAVIESS county,-995.2064826560293

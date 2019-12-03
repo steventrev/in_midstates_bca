@@ -1,0 +1,47 @@
+Silos,Description,Target,Expression
+# identify cval columns for each number of autos group,,,
+,,_BASE_AUTO_1_COLNAMES,zones.columns.map(lambda x: x.startswith('base_') and 'c2' in x).tolist()
+,,_BASE_AUTO_2_COLNAMES,zones.columns.map(lambda x: x.startswith('base_') and 'c3' in x).tolist()
+,,_BASE_AUTO_3_COLNAMES,zones.columns.map(lambda x: x.startswith('base_') and 'c4' in x).tolist()
+,,_BASE_AUTO_4P_COLNAMES,zones.columns.map(lambda x: x.startswith('base_') and 'c5' in x).tolist()
+,,_BUILD_AUTO_1_COLNAMES,zones.columns.map(lambda x: x.startswith('build_') and 'c2' in x).tolist()
+,,_BUILD_AUTO_2_COLNAMES,zones.columns.map(lambda x: x.startswith('build_') and 'c3' in x).tolist()
+,,_BUILD_AUTO_3_COLNAMES,zones.columns.map(lambda x: x.startswith('build_') and 'c4' in x).tolist()
+,,_BUILD_AUTO_4P_COLNAMES,zones.columns.map(lambda x: x.startswith('build_') and 'c5' in x).tolist()
+# calculate auto ownership,,,
+,Autos in HHs with 1 auto in base year,base_1_auto,"zones.loc[:, _BASE_AUTO_1_COLNAMES].sum(axis=1)"
+,Autos in HHs with 2 auto in base year,base_2_auto,"zones.loc[:, _BASE_AUTO_2_COLNAMES].sum(axis=1) * 2"
+,Autos in HHs with 3 auto in base year,base_3_auto,"zones.loc[:, _BASE_AUTO_3_COLNAMES].sum(axis=1) * 3"
+,Autos in HHs with 4plus auto in base year,base_4p_auto,"zones.loc[:, _BASE_AUTO_4P_COLNAMES].sum(axis=1) * AVERAGE_AUTOS_IN_4PLUS"
+,Autos in HHs with 1 auto in build,build_1_auto,"zones.loc[:, _BUILD_AUTO_1_COLNAMES].sum(axis=1)"
+,Autos in HHs with 2 auto in build year,build_2_auto,"zones.loc[:, _BUILD_AUTO_2_COLNAMES].sum(axis=1) * 2"
+,Autos in HHs with 3 auto in build year,build_3_auto,"zones.loc[:, _BUILD_AUTO_3_COLNAMES].sum(axis=1) * 3"
+,Autos in HHs with 4plus auto in build year,build_4p_auto,"zones.loc[:, _BUILD_AUTO_4P_COLNAMES].sum(axis=1) * AVERAGE_AUTOS_IN_4PLUS"
+,base scenario auto ownership,base_auto_ownership,base_1_auto + base_2_auto + base_3_auto + base_4p_auto
+,build scenario auto ownership,build_auto_ownership,build_1_auto + build_2_auto + build_3_auto + build_4p_auto
+# calculate auto ownership benefit,,,
+,base scenario auto ownership cost,base_auto_ownership_cost,base_auto_ownership * ANNUAL_COST_PER_VEHICLE
+,build scenario auto ownership cost,build_auto_ownership_cost,build_auto_ownership * ANNUAL_COST_PER_VEHICLE
+*,auto ownership cost benefit,auto_ownership_benefit,(build_auto_ownership_cost - base_auto_ownership_cost) * -1
+# calculate productions by purpose for accessibility benefit,,,
+,hbo productions in base scenario,base_prod_hbo,zones.base_OtherTours_Lo + zones.base_OtherTours_Mi + zones.base_OtherTours_Hi
+,hbs productions in base scenario,base_prod_hbs,zones.base_SchoolTours_Lo + zones.base_SchoolTours_Mi + zones.base_SchoolTours_Hi
+,hbw productions in base scenario,base_prod_hbw,zones.base_WorkTours_Lo + zones.base_WorkTours_Mi + zones.base_WorkTours_Hi
+,nhbnw productions in base scenario,base_prod_nhbnw,zones.base_nhbnwl + zones.base_nhbnwm + zones.base_nhbnwh
+,nhbw productions in base scenario,base_prod_nhbw,zones.base_nhbwl + zones.base_nhbwm + zones.base_nhbwh
+,hbo productions in build scenario,build_prod_hbo,zones.build_OtherTours_Lo + zones.build_OtherTours_Mi + zones.build_OtherTours_Hi
+,hbs productions in build scenario,build_prod_hbs,zones.build_SchoolTours_Lo + zones.build_SchoolTours_Mi + zones.build_SchoolTours_Hi
+,hbw productions in build scenario,build_prod_hbw,zones.build_WorkTours_Lo + zones.build_WorkTours_Mi + zones.build_WorkTours_Hi
+,nhbnw productions in build scenario,build_prod_nhbnw,zones.build_nhbnwl + zones.build_nhbnwm + zones.build_nhbnwh
+,nhbw productions in build scenario,build_prod_nhbw,zones.build_nhbwl + zones.build_nhbwm + zones.build_nhbwh
+#calculate accessibility benefit,,,
+,,access_benefit_hbo,(0.5*(base_prod_hbo + build_prod_hbo)*(zones.build_OLnSum - zones.base_OLnSum)/UPD_HBO/60*VOT_HBO)* DISCOUNT_RATE * ANNUALIZATION_FACTOR
+,,access_benefit_hbs,(0.5*(base_prod_hbs + build_prod_hbs)*(zones.build_SLnSum - zones.base_SLnSum)/UPD_HBS/60*VOT_HBS)* DISCOUNT_RATE * ANNUALIZATION_FACTOR
+,,access_benefit_hbw,(0.5*(base_prod_hbw + build_prod_hbw)*(zones.build_WLnSum - zones.base_WLnSum)/UPD_HBW/60*VOT_HBW)* DISCOUNT_RATE * ANNUALIZATION_FACTOR
+,,access_benefit_nhbnw,(0.5*(base_prod_nhbnw + build_prod_nhbnw)*(zones.build_OLnSum - zones.base_OLnSum)/UPD_NHBNW/60*VOT_NHBNW)* DISCOUNT_RATE * ANNUALIZATION_FACTOR
+,,access_benefit_nhbw,(0.5*(base_prod_nhbw + build_prod_nhbw)*(zones.build_WLnSum - zones.base_WLnSum)/UPD_NHBW/60*VOT_NHBW)* DISCOUNT_RATE * ANNUALIZATION_FACTOR
+*,accessibility benefit,access_benefit_total,access_benefit_hbo + access_benefit_hbs + access_benefit_hbw + access_benefit_nhbnw + access_benefit_nhbw
+#calculate physical activity benefit,,,
+,,base_nonmotor_time,zones.base_non_motorzied * AVG_NONMOTORIZED_TIME
+,,build_nonmotor_time,zones.build_non_motorzied * AVG_NONMOTORIZED_TIME
+*,physical activity benefit,physical_activity_benefit,VSL * ANNMORTALITYRATE *  RISKREDUCTION * (build_nonmotor_time - base_nonmotor_time) / 25.5
