@@ -20,4 +20,4 @@ Silos,Description,Target,Expression
 ,,coc_ext_age18or65,cvals.base_age18or65
 ,,coc_lowinc_ext,cvals.base_lowinc
 #check calculations,,,
-*,total hhs for each coc,hhs_for_the_coc,households
+,total hhs for each coc,hhs_for_the_coc,households

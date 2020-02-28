@@ -1,5 +1,5 @@
 # file name for cvals table csv data input file (expect versions in build and base data subdirs)
-cval_file_name: mf.cval.csv
+cval_file_name: taz_hh.csv
 
 # file name for external cocs table csv data input file (expect versions in build and base data subdirs)
 ext_cocs_file_name: cocs.csv
@@ -11,27 +11,9 @@ district_file_name: zone_districts.csv
 # data will be combined into a single table with columns names prefixed with 'base_' or 'build_'
 # (e.g.) if ma.hbcdcls.csv has a column 'hbcdcls' you will have 'base_hbcdcls' and 'build_hbcdcls'
 aggregate_zone_file_names:
-  - ma.WLnSum.csv
-  - ma.SLnSum.csv
-  - ma.OLnSum.csv
-  - mf.cval.csv
-  - ma.hboprh.csv
-  - ma.hboprl.csv
-  - ma.hboprm.csv
-  - ma.hbsprh.csv
-  - ma.hbsprl.csv
-  - ma.hbsprm.csv
-  - ma.hbwprh.csv
-  - ma.hbwprl.csv
-  - ma.hbwprm.csv
-  - ma.nhbnwpl.csv
-  - ma.nhbnwpm.csv
-  - ma.nhbnwph.csv
-  - ma.nhbwpl.csv
-  - ma.nhbwpm.csv
-  - ma.nhbwph.csv
-  - parking_cost.csv
-  - ma.nonmotorized.csv
+  - taz_hh.csv
+
+
 
 # file name for csv file in data dir with a column mapping zone_id to offset
 # zone_ids file must have a column with a name in zone_aliases containing zone_ids
